@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.13.4",
     "bootstrap": "^5.3.8",
+    "cross-env": "^10.1.0",
     "jspdf": "^2.x.x",
     "jspdf-autotable": "^3.x.x",
     "react": "^19.2.4",
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

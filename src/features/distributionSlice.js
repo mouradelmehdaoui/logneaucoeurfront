@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/distribution";
+const API_URL = "https://logneaucoeur.vercel.app/api/distribution";
 
 // helper pour token
 const authHeader = (getState) => {
@@ -14,7 +14,7 @@ export const fetchDistributions = createAsyncThunk(
   "distribution/fetch",
   async (page = 1, { getState }) => {
     const res = await axios.get(
-      `http://localhost:5000/api/distribution?page=${page}`, // plus de secteur ici
+      `https://logneaucoeur.vercel.app/api/distribution?page=${page}`, // plus de secteur ici
       authHeader(getState)
     );
     return res.data;
@@ -27,7 +27,7 @@ export const createDistribution = createAsyncThunk(
   "distribution/create",
   async (payload, { getState }) => {
     const res = await axios.post(
-      "http://localhost:5000/api/distribution",
+      "https://logneaucoeur.vercel.app/api/distribution",
       payload,
       authHeader(getState)
     );
