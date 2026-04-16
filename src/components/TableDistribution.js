@@ -8,6 +8,9 @@ export default function TableDistribution({ data, onDownloadPDF }) {
   const [showForm, setShowForm] = useState(false);
   const [editData, setEditData] = useState(null);
 
+  console.log(data);
+  
+
   const handleEdit = (dist) => {
     setEditData(dist);
     setShowForm(true);

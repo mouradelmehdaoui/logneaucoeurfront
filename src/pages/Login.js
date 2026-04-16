@@ -19,8 +19,10 @@ export default function Login() {
     try {
       // 🔹 Appel au backend pour récupérer le VRAI token JWT
       const res = await axios.post("https://logneaucoeur.vercel.app/api/auth/login", { login, password });
+
+      //const res = await axios.post("http://localhost:5000/api/auth/login", { login, password });
       
-      // On dispatch le token et les infos secteurs renvoyés par le back
+            // On dispatch le token et les infos secteurs renvoyés par le back
       dispatch(loginSuccess({ 
         token: res.data.token, 
         sector: res.data.secteur 

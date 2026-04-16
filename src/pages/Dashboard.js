@@ -13,7 +13,13 @@ export default function Dashboard() {
 
   // Récupération des données depuis le store Redux
   const sector = useSelector((state) => state.auth.sector);
+
+  console.log("sector",sector);
+  
   const { list, totalPages, loading } = useSelector((state) => state.distribution);
+
+  console.log('list:', list);
+  
   
   // Référence pour capturer la zone du rapport pour le PDF
   const dashboardRef = useRef();
